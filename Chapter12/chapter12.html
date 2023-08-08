@@ -1,0 +1,264 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermidiate JS</title>
+</head>
+
+<body>
+    <script src="chapter12.js"></script>
+    <div id="output">Slowly but surely is the way I guess ;)</div>
+    Search for:
+    <input id="sText" type="text">
+    <br> Replace with:
+    <input id="rText" type="text">
+    <br>
+    <button>Replace</button>
+    <script>
+        let output = document.getElementById("output");
+        let findValue = document.getElementById("sText");
+        let replaceValue = document.getElementById("rText");
+        document.querySelector("button").addEventListener("click", lookUp);
+        function lookUp() {
+            let s = output.textContent;
+            let rt = replaceValue.value;
+            let replaced = new RegExp(findValue.value, "gi");
+            if (s.match(replaced)) {
+                let newValue = s.replace(replaced, rt);
+                output.textContent = newValue;
+            }
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!doctype html>
+<html>
+
+<head>
+    <title>JavaScript Course</title>
+</head>
+
+<body>
+    <div class="output"></div>
+    <input type="text" placeholder="Enter Email">
+    <button>Check</button>
+    <script>
+        let output = document.querySelector(".output");
+        let emailVal = document.querySelector("input");
+        let bttn = document.querySelector("button");
+        let emailExp = /([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w+/;
+        bttn.addEventListener("click", (e) => {
+            let val = emailVal.value;
+            let result = emailExp.test(val);
+            let response = "";
+            if (!result) {
+                response = "Invalid Email";
+                output.style.color = "red";
+            } else {
+                response = "Valid Email";
+                output.style.color = "green";
+            }
+            emailVal.value = "";
+            output.textContent = response;
+        });
+
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!doctype html>
+<html>
+
+<head>
+    <title>12.2</title>
+</head>
+
+<body>
+    <div class="output"></div>
+    <input type="text" placeholder="Enter Email">
+    <button>Check</button>
+    <script>
+        let output = document.querySelector(".output");
+        let emailVal = document.querySelector("input");
+        let bttn = document.querySelector("button");
+        bttn.addEventListener("click", validateEmail);
+
+        function validateEmail(e) {
+            userEmail = email.value;
+            let emailPat = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
+        }
+
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="chapter12.js"></script>
+    <div id="stored"></div>
+    <script>
+        window.localStorage.clear();
+        let message = "Hello storage!";
+        localStorage.setItem("example", message);
+        if (localStorage.getItem("example")) {
+            document.getElementById("stored").innerHTML =
+                localStorage.getItem("example");
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!doctype html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+    <style>
+        .ready {
+            background-color: #ddd;
+            color: red;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <input placeholder="New Item" value="test item" maxlength="30">
+        <button>Add</button>
+    </div>
+    <ul class="output">
+    </ul>
+    <script>
+        const userTask = document.querySelector(".main input");
+        const addBtn = document.querySelector(".main button");
+        const output = document.querySelector(".output");
+        const tasks = JSON.parse(localStorage.getItem("tasklist")) || [];
+        addBtn.addEventListener("click", createListItem);
+        if (tasks.length > 0) {
+            tasks.forEach((task) => {
+                genItem(task.val, task.checked);
+            });
+        }
+        function saveTasks() {
+            localStorage.setItem("tasklist", JSON.stringify(tasks));
+        }
+        function buildTasks() {
+            tasks.length = 0;
+            const curList = output.querySelectorAll("li");
+            curList.forEach((el) => {
+                const tempTask = {
+                    val: el.textContent,
+                    checked: false
+                };
+                if (el.classList.contains("ready")) {
+                    tempTask.checked = true;
+                }
+                tasks.push(tempTask);
+            });
+            saveTasks();
+        }
+        function genItem(val, complete) {
+            const li = document.createElement("li");
+            const temp = document.createTextNode(val);
+            li.appendChild(temp);
+            output.append(li);
+            userTask.value = "";
+            if (complete) {
+                li.classList.add("ready");
+            }
+            li.addEventListener("click", (e) => {
+                li.classList.toggle("ready");
+                buildTasks();
+            });
+            return val;
+        }
+        function createListItem() {
+            const val = userTask.value;
+            if (val.length > 0) {
+                const myObj = {
+                    val: genItem(val, false),
+                    checked: false
+                };
+                tasks.push(myObj);
+                saveTasks();
+            }
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let list = [{
+            "food": "Pizza",
+            "clients": 75
+        },
+        {
+            "food": "Burgers",
+            "clients": 57
+        }
+        ];
+        //reloader();
+        //function reloader() {
+        //list.forEach((el) => {
+        //  console.log(`${el.food} = ${el.clients}`);
+        //});
+        //}
+        const newStr = JSON.stringify(list);
+        console.log(newStr)
+        const newObj = JSON.parse(newStr);
+        newObj.forEach((el) => {
+            console.log(el);
+        });
+    </script>
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="chapter12.js"></script>
+    <script>
+        console.log("a");
+        setTimeout(() => {
+            console.log("b");
+        }, 0);
+        console.log("c");
+    </script>
+</body>
+
+</html> -->

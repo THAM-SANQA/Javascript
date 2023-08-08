@@ -1,0 +1,110 @@
+
+
+<!--<!doctype html>
+<html>
+
+<head>
+    <title>Canvas HTML5</title>
+</head>
+
+<body>
+    <div id="one">Hello World</div>
+    <script>
+        const myEle = document.getElementById("one");
+        console.log(myEle);
+    </script>
+</body>
+
+</html>
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="message">Complete JavaScript Course</div>
+    <div>
+        <input type="text" id="addItem">
+        <input type="button" id="addNew" value="Add to List" onclick="createListItem()">
+    </div>
+    <div id="output">
+        <h1>Shopping List</h1>
+        <ol id="sList"> </ol>
+    </div>
+    <script>
+        let oList = document.getElementById("sList");
+        let item = document.getElementById("addItem");
+
+        function createListItem() {
+            let li = document.createElement("li");
+            li.innerText = item.value;
+            oList.appendChild(li);
+            item.value = "";
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10</title>
+</head>
+
+<body>
+    <h1>Let's find the treasure</h1>
+    <div id="forest">
+        <div id="tree1">
+            <div id="squirrel"></div>
+            <div id="flower"></div>
+        </div>
+        <div id="tree2">
+            <div id="shrubbery">
+                <div id="treasure"></div>
+            </div>
+            <div id="mushroom">
+                <div id="bug"></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html> 
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Sample Webpage</title>
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <ul>
+                <li>One</li>
+                <li>Two</li>
+                <li>Three</li>
+            </ul>
+        </div>
+        <div>blue</div>
+        <div>green</div>
+        <div>yellow</div>
+        <div>Purple</div>
+    </div>
+    <script>
+        console.dir(document.body.children[0].children[0].children[0].nextSibling);
+    </script>
+
+</body>
+
+</html>
