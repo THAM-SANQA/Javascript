@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project 10.1</title>
+    <style>
+        .active {
+            display: block !important;
+        }
+
+        .myText {
+            display: none;
+        }
+
+        .title {
+            font-size: 1.5em;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Well, IDK</div>
+        <div class="myText">Planning for the future</div>
+        <div class="title">Where to now?</div>
+        <div class="myText">Sometimes we strive to do better</div>
+        <div class="title">Avoid me</div>
+        <div class="myText">Does it get easier?</div>
+    </div>
+
+    <script>
+        let myTitle = document.querySelectorAll(".title");
+        let myTexts = document.querySelectorAll(".myText");
+        myTitle.forEach((e) => {
+            e.addEventListener("click", (nextEl) => {
+                console.log(e.nextElementSibling);
+                remove();
+                e.nextElementSibling.classList.toggle("active");
+
+            })
+        })
+        function remove() {
+            myTexts.forEach((element) => {
+                element.classList.remove("active");
+            })
+        }
+    </script>
+</body>
+
+</html>
