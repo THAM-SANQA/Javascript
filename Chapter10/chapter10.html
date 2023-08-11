@@ -1,10 +1,127 @@
-
-
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="chapter10.js"></script>
+</body>
+</html> -->
 <!--<!doctype html>
 <html>
 
 <head>
-    <title>Canvas HTML5</title>
+    <title>Practice exercise 10.5</title>
+</head>
+
+<body>
+
+    <body>
+        <h1 class="ele">Hello World</h1>
+        <div class="ele">Hello World 1</div>
+        <div class="ele">Hello World 3</div>
+        <p class="ele">Hello World 4</p>
+        <script>
+            const myEle = document.querySelector(".ele");
+            console.log(myEle);
+        </script>
+
+</html>
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Practice exercise 10.6</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="myEle">One</div>
+        <div class="myEle">Two</div>
+        <div class="myEle">Three</div>
+        <div class="myEle">Four</div>
+        <div class="myEle">Five</div>
+    </div>
+    <script>
+        const eles = document.querySelectorAll(".myEle");
+        console.log(eles);
+        eles.forEach((el) => {
+            console.log(el);
+        });
+    </script>
+</body>
+
+</html>
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Practice exercise 10.7</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="message(this)">Button 1</button>
+        <button onclick="message(this)">Button 2</button>
+    </div>
+    <script>
+        function message(el) {
+            console.dir(el.textContent);
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Practise Ex 10.4</title>
+</head>
+
+<body>
+    <h1 class="ele">Hello World</h1>
+    <div class="ele">Hello World 1</div>
+    <div class="ele">Hello World 3</div>
+    <script>
+        const myEles = document.getElementsByClassName("ele");
+        console.log(myEles[0]);
+    </script>
+</body>
+
+</html>
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Practise Ex 10.3</title>
+</head>
+
+<body>
+    <div>Hello World 1</div>
+    <div>Hello World 2</div>
+    <div>Hello World 3</div>
+    <script>
+        const myEles = document.getElementsByTagName("div");
+        console.log(myEles[1]);
+    </script>
+</body>
+
+</html>
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Practise Ex 10.2</title>
 </head>
 
 <body>
