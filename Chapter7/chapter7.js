@@ -1,6 +1,6 @@
 //  Classes
 // blueprints for object creation
-// allows for creation o multiple objects at once.
+// allows for creation of multiple objects at once.
 // class Dog { // class names start with a capital letter
 //     constructor(dogName, weight, color, breed) { // initialises objects to the class which are set when initiating the class
 //         this.dogName = dogName;
@@ -65,24 +65,24 @@
 // let friend = new Person("Prince", "Bahloks");
 // console.log(friend.firstname);
 
-// // Practice exercise 7.3
-// class Animal {
-//     constructor(animal, sounds) {
-//         this.animal = animal;
-//         this.sounds = sounds;
-//     }
-//     speak() {
-//         console.log(this.animal + " " + this.sounds);
-//     }
-// }
-// Animal.prototype.sleep = function () {
-//     return this.animal + " is sleeping";
-// }
-// let lion = new Animal("lion", "roars");
-// let cow = new Animal("cow", "moos");
-// lion.speak();
-// console.log(cow.sleep());
-// console.log(cow);
+// Practice exercise 7.3
+class Animal {
+    constructor(animal, sounds) {
+        this.animal = animal;
+        this.sounds = sounds;
+    }
+    speak() {
+        console.log(this.animal + " " + this.sounds);
+    }
+}
+Animal.prototype.sleep = function () {
+    return this.animal + " is sleeping";
+}
+let lion = new Animal("lion", "roars");
+let cow = new Animal("cow", "moos");
+lion.speak();
+console.log(cow.sleep());
+console.log(cow);
 
 
 
