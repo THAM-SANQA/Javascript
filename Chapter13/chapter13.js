@@ -133,18 +133,52 @@
 //     counter(val);
 // }).catch(error => console.log("Error: ", error));
 
-function saySomething(x) {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve("something" + x);
-        },
-            2000);
-    });
-}
-async function talk(x) {
-    const words = await saySomething(x);
-    console.log(words);
-}
-talk(2);
-talk(4);
-talk(8);
+// function saySomething(x) {
+//     return new Promise(resolve => {
+//         setTimeout(() => {
+//             resolve("something" + x);
+//         },
+//             2000);
+//     });
+// }
+// async function talk(x) {
+//     const words = await saySomething(x);
+//     console.log(words);
+// }
+// talk(2);
+// talk(4);
+// talk(8);
+
+//Practise exercise 13.3
+
+// let cnt = 0;
+// function outputTime(val) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       cnt++;
+//       resolve(`x value ${val} counter:${cnt}`);             //only returns resolve after a 1000miliseconds
+//     }, 1000);
+//   });
+// }
+// async function aCall(val) {
+//   console.log(`ready ${val} counter:${cnt}`);
+//   let res = await outputTime(val);                          //this function will be running first
+//   console.log(res);
+// }
+// for (let x = 1; x < 4; x++) {
+//   aCall(x);
+// }
+
+//Event loop
+//This single executor is the event loop
+//Call stack and callback queue
+//JavaScript works with a call stack, and all the actions that it has to execute are
+//queued up here. The event loop is a process that is constantly monitoring this call
+//stack, and whenever there are tasks to do, the event loop does them one by one
+
+// console.log("Hi there");
+// setTimeout(() => console.log("Sorry I'm late"), 1000);          //this will be done last after a 1000miliseconds
+// console.log(add(4, 5));
+// function add(x, y) {
+//   return x + y;
+// }
