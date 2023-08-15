@@ -29,26 +29,26 @@
 // console.log(response);
 
 // Rock Paper Scissors game
-// let array = ["Rock", "Paper", "Scissors"];
-// let comp = Math.floor(Math.random() * 3);
-// let cpu = array[comp];
-// let person = Number(prompt("Enter number: '1' for Rock, '2' for Paper or '3' for Scissors."));
-// person -= 1;
-// let human = array[person];
-// if (comp === person) {
-//     console.log("You chose " + human + " computer chose " + cpu + ". Hence it's a TIE.");
-// } else if (person > comp) {
-//     if (person === 2 && comp === 0) {
-//         console.log("You chose " + human + " computer chose " + cpu + ". Hence You lost.");
-//     } else {
-//         console.log("You chose " + human + " computer chose " + cpu + ". Hence You won.");
-//     }
-// } else {
-//     if (person === 0 && comp === 2) {
-//         console.log("You chose " + human + " computer chose " + cpu + ". Hence You won.");
-//     } else {
-//         console.log("You chose " + human + " computer chose " + cpu + ". Hence You lost.");
-//     }
-// }
+let array = ["Rock", "Paper", "Scissors"];
+let comp = Math.floor(Math.random() * 3);
+let cpu = array[comp];
+let person = Number(prompt("Enter number: '1' for Rock, '2' for Paper or '3' for Scissors."));
+person -= 1;
+let human = array[person];
+if (comp === person) {
+    console.log("You chose " + human + " computer chose " + cpu + ". Hence it's a TIE.");
+} else if (person > comp) {
+    if (person === 2 && comp === 0) {
+        console.log("You chose " + human + " computer chose " + cpu + ". Hence You lost.");
+    } else {
+        console.log("You chose " + human + " computer chose " + cpu + ". Hence You won.");
+    }
+} else {
+    if (person === 0 && comp === 2) {
+        console.log("You chose " + human + " computer chose " + cpu + ". Hence You won.");
+    } else {
+        console.log("You chose " + human + " computer chose " + cpu + ". Hence You lost.");
+    }
+}
 
 
