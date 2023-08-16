@@ -9,17 +9,17 @@
 // }
 // count(2);
 
-// // Timeout Order
-// let one = (() => { console.log("One") });
-// let two = (() => { console.log("Two") });
-// let three = () => {
-//     console.log("Three");
-//     one();
-//     two();
-// };
-// let four = () => {
-//     console.log("Four");
-//     setTimeout(one, 0);
-//     three();
-// }
-// four();
+// Timeout Order
+let one = (() => { console.log("One") });
+let two = (() => { console.log("Two") });
+let three = () => {
+    console.log("Three");
+    one();
+    two();
+};
+let four = () => {
+    console.log("Four");
+    setTimeout(one, 0);
+    three();
+}
+four();
