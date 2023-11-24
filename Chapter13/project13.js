@@ -29,5 +29,6 @@ function checker(pass) {
         console.log(value);
     })
 }
-checker("sunny");
+checker("1738");
 checker("password");
+checker(["junior", "1738", "idkwtdbby"])
